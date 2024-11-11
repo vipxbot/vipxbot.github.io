@@ -1,57 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background: linear-gradient(120deg, #ff8a00, #e52e71, #0066ff);
+    background-size: 200% 200%;
+    animation: backgroundMove 10s infinite;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .dialog-box {
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    width: 90%;
+    max-width: 500px;
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 2px solid #ccc;
-}
-
-.dialog-box h1 {
-    color: #e60000;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.dialog-box p {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.dialog-box .logo {
-    width: 100px;
-    margin: 10px 0;
-}
-
-.register-btn {
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
     margin-bottom: 20px;
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .close-btn {
-    background-color: #ccc;
-    padding: 10px;
+    background: #ff4b5c;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.close-btn:hover {
-    background-color: #999;
+.register-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
+
+.register-link:hover {
+    background: #cc7a00;
+}
+
+.main-interface {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.introduction {
+    font-size: 1.3em;
+    margin: 20px 0;
+    color: #ccc;
+}
+
+.features {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.start-btn, .telegram-btn {
+    padding: 12px 20px;
+    margin: 15px 5px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.start-btn:hover, .telegram-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    }

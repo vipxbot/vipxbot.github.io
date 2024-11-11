@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.dialog-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #ccc;
+}
+
+.dialog-box h1 {
+    color: #e60000;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.dialog-box p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dialog-box .logo {
+    width: 100px;
+    margin: 10px 0;
+}
+
+.register-btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background-color: #ccc;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #999;
+}

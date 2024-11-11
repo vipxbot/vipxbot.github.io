@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RajaLuck Prediction</title>
+    <style>
+        body {
+            background-color: #0a0f1f;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: #001f3f;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 255, 128, 0.7);
+            width: 350px;
+        }
+
+        .header-info, .user-info {
+            margin-bottom: 20px;
+        }
+
+        .country-flag, .online-users {
+            font-size: 14px;
+        }
+
+        .logo img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .active-status {
+            color: lime;
+        }
+
+        .period-input input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        #start-btn {
+            margin-top: 20px;
+            background-color: #ff8c00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #start-btn:hover {
+            background-color: #ffa500;
+        }
+
+        .result div {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-info">
+                <div class="country-flag">🇮🇳 Country: India</div>
+                <div class="online-users">Online Users: <span id="online-users">9682</span></div>
+            </div>
+            <div class="user-info"></div>
+        </header>
+
+        <main>
+            <div class="logo">
+                <img src="logo.png" alt="Rajaluck Logo">
+                <h1>RajaLuck Hack</h1>
+            </div>
+
+            <div class="server-status">
+                <span>Server:</span> <span class="active-status">Active</span>
+            </div>
+
+            <div class="period-input">
+                <label for="period-number">Period Number: </label>
+                <input type="number" id="period-number" placeholder="Enter...">
+            </div>
+
+            <div class="result">
+                <div id="size-result">Size: --</div>
+            </div>
+
+            <button id="start-btn">START</button>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('start-btn').addEventListener('click', generateResult);
+
+        function generateResult() {
+            const periodNumber = document.getElementById('period-number').value;
+            if (!periodNumber) {
+                alert("Please enter a period number.");
+                return;
+            }
+
+            // Determine "Big" or "Small" randomly
+            const isBig = Math.random() > 0.5;
+            const size = isBig ? "Big" : "Small";
+
+            // Update Result in HTML
+            document.getElementById('size-result').textContent = "Size: " + size;
+        }
+    </script>
+</body>
+</html>

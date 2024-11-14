@@ -1,0 +1,194 @@
+/* General Body Style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Very dark background */
+    color: #00ff41;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Title Style */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #00ff41;
+    margin-top: 2rem;
+    animation: title-fade 3s infinite;
+}
+
+/* Logo Style */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-top: 1.5rem;
+    border-radius: 50%;
+    border: 3px solid #00ff41;
+    transition: transform 0.3s;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Main Interface Layout */
+.main-interface {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1400px;
+    margin-top: 4rem;
+    gap: 5%;
+}
+
+/* Left Text Section */
+.text-section {
+    width: 50%;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.introduction {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.features {
+    margin-top: 1.5rem;
+}
+
+.features p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Right Button Section */
+.button-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Cool Button Styles */
+.start-btn, .telegram-btn {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn::after, .telegram-btn::after {
+    content: '💰 start Win Money ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 0, 0.5);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.start-btn:hover, .telegram-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.start-btn:hover::after, .telegram-btn:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Dialog Box in Center with Larger Text */
+.dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 2.5rem 2rem; /* Adjusted padding for more space */
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
+    z-index: 100;
+    animation: rgb-border 3s infinite;
+}
+
+/* Text Styling for Larger Font Inside Dialog Box */
+.dialog-box p {
+    font-size: 1.5rem; /* Increased font size */
+    line-height: 1.8; /* More spacing for readability */
+    color: #00ff41;
+    margin: 0.5rem 0;
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.7rem; /* Slightly larger for easy clicking */
+    font-size: 1.2rem; /* Increased font size */
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* Hover Effect for Close Button */
+.close-btn:hover {
+    background: #cc0000;
+}
+
+/* Background Matrix Animation */
+@keyframes matrix-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.matrix-stream {
+    position: absolute;
+    top: 0;
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    animation: matrix-fall linear infinite;
+}
+
+/* Dynamic Color Fade for Title */
+@keyframes title-fade {
+    0%, 100% { color: #00ff41; }
+    50% { color: #33ff66; }
+}
+
+/* Responsiveness for Smaller Screens */
+@media screen and (max-width: 1024px) {
+    .main-interface {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-section, .button-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .features p {
+        font-size: 1rem;
+    }
+                         }
